@@ -23,7 +23,7 @@ class TestCache implements ICache
 
     public function getLaunchData($key)
     {
-        return $this->launchData[$key] ?? null;
+        return isset($this->launchData[$key]) ? $this->launchData[$key] : null;
     }
 
     public function cacheLaunchData($key, $jwt_body)
@@ -52,7 +52,7 @@ class TestCache implements ICache
 
     public function getAccessToken($key)
     {
-        return $this->launchData[$key] ?? null;
+        return isset($this->launchData[$key]) ? $this->launchData[$key] : null;
     }
 
     public function clearAccessToken($key)
@@ -454,7 +454,7 @@ class Lti13CertificationTest extends TestCase
 
     private function login($loginData = null)
     {
-        $loginData = $loginData ?? [
+        $loginData = isset($loginData) ? $loginData : [
             'iss' => $this->issuer['issuer'],
             'login_hint' => '535fa085f22b4655f48cd5a36a9215f64c062838',
         ];

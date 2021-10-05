@@ -11,10 +11,10 @@ class LtiGradeSubmissionReview
 
     public function __construct(array $gradeSubmission = null)
     {
-        $this->reviewable_status = $gradeSubmission['reviewableStatus'] ?? null;
-        $this->label = $gradeSubmission['label'] ?? null;
-        $this->url = $gradeSubmission['url'] ?? null;
-        $this->custom = $gradeSubmission['custom'] ?? null;
+        $this->reviewable_status = isset($gradeSubmission['reviewableStatus']) ? $gradeSubmission['reviewableStatus'] : null;
+        $this->label = isset($gradeSubmission['label']) ? $gradeSubmission['label'] : null;
+        $this->url = isset($gradeSubmission['url']) ? $gradeSubmission['url'] : null;
+        $this->custom = isset($gradeSubmission['custom']) ? $gradeSubmission['custom'] : null;
     }
 
     public function __toString()

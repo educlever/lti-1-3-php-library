@@ -17,14 +17,14 @@ class LtiRegistration implements ILtiRegistration
 
     public function __construct(array $registration = [])
     {
-        $this->issuer = $registration['issuer'] ?? null;
-        $this->clientId = $registration['clientId'] ?? null;
-        $this->keySetUrl = $registration['keySetUrl'] ?? null;
-        $this->authTokenUrl = $registration['authTokenUrl'] ?? null;
-        $this->authLoginUrl = $registration['authLoginUrl'] ?? null;
-        $this->authServer = $registration['authServer'] ?? null;
-        $this->toolPrivateKey = $registration['toolPrivateKey'] ?? null;
-        $this->kid = $registration['kid'] ?? null;
+        $this->issuer = isset($registration['issuer']) ? $registration['issuer'] : null;
+        $this->clientId = isset($registration['clientId']) ? $registration['clientId'] : null;
+        $this->keySetUrl = isset($registration['keySetUrl']) ? $registration['keySetUrl'] : null;
+        $this->authTokenUrl = isset($registration['authTokenUrl']) ? $registration['authTokenUrl'] : null;
+        $this->authLoginUrl = isset($registration['authLoginUrl']) ? $registration['authLoginUrl'] : null;
+        $this->authServer = isset($registration['authServer']) ? $registration['authServer'] : null;
+        $this->toolPrivateKey = isset($registration['toolPrivateKey']) ? $registration['toolPrivateKey'] : null;
+        $this->kid = isset($registration['kid']) ? $registration['kid'] : null;
     }
 
     public static function new(array $registration = [])
@@ -118,7 +118,7 @@ class LtiRegistration implements ILtiRegistration
 
     public function getKid()
     {
-        return $this->kid ?? hash('sha256', trim($this->issuer.$this->clientId));
+        return isset($this->kid) ? $this->kid : hash('sha256', trim($this->issuer.$this->clientId));
     }
 
     public function setKid($kid)

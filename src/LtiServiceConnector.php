@@ -131,7 +131,7 @@ class LtiServiceConnector implements ILtiServiceConnector
         while ($nextUrl) {
             $response = $this->makeServiceRequest($registration, $scopes, $request);
 
-            $results = array_merge($results, $response['body'][$key] ?? []);
+            $results = array_merge($results, isset($response['body'][$key]) ? $response['body'][$key] : []);
 
             $nextUrl = $this->getNextUrl($response['headers']);
             if ($nextUrl) {
@@ -152,9 +152,9 @@ class LtiServiceConnector implements ILtiServiceConnector
 
     private function getNextUrl(array $headers)
     {
-        $subject = $headers['Link'] ?? '';
+        $subject = isset($headers['Link']) ? $headers['Link'] : '';
         preg_match(LtiServiceConnector::NEXT_PAGE_REGEX, $subject, $matches);
 
-        return $matches[1] ?? null;
+        return isset($matches[1]) ? $matches[1] : null;
     }
 }

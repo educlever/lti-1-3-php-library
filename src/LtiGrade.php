@@ -15,15 +15,15 @@ class LtiGrade
 
     public function __construct(array $grade = null)
     {
-        $this->score_given = $grade['scoreGiven'] ?? null;
-        $this->score_maximum = $grade['scoreMaximum'] ?? null;
-        $this->comment = $grade['comment'] ?? null;
-        $this->activity_progress = $grade['activityProgress'] ?? null;
-        $this->grading_progress = $grade['gradingProgress'] ?? null;
-        $this->timestamp = $grade['timestamp'] ?? null;
-        $this->user_id = $grade['userId'] ?? null;
-        $this->submission_review = $grade['submissionReview'] ?? null;
-        $this->canvas_extension = $grade['https://canvas.instructure.com/lti/submission'] ?? null;
+        $this->score_given = isset($grade['scoreGiven']) ? $grade['scoreGiven'] : null;
+        $this->score_maximum = isset($grade['scoreMaximum']) ? $grade['scoreMaximum'] : null;
+        $this->comment = isset($grade['comment']) ? $grade['comment'] : null;
+        $this->activity_progress = isset($grade['activityProgress']) ? $grade['activityProgress'] : null;
+        $this->grading_progress = isset($grade['gradingProgress']) ? $grade['gradingProgress'] : null;
+        $this->timestamp = isset($grade['timestamp']) ? $grade['timestamp'] : null;
+        $this->user_id = isset($grade['userId']) ? $grade['userId'] : null;
+        $this->submission_review = isset($grade['submissionReview']) ? $grade['submissionReview'] : null;
+        $this->canvas_extension = isset($grade['https://canvas.instructure.com/lti/submission']) ? $grade['https://canvas.instructure.com/lti/submission'] : null;
     }
 
     public function __toString()

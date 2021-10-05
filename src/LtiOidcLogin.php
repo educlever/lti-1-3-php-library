@@ -113,7 +113,7 @@ class LtiOidcLogin
         }
 
         // Fetch Registration Details.
-        $registration = $this->db->findRegistrationByIssuer($request['iss'], $request['client_id'] ?? null);
+        $registration = $this->db->findRegistrationByIssuer($request['iss'], isset($request['client_id']) ? $request['client_id'] : null);
 
         // Check we got something.
         if (empty($registration)) {

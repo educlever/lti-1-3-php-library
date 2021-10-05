@@ -15,14 +15,14 @@ class LtiLineitem
 
     public function __construct(array $lineitem = null)
     {
-        $this->id = $lineitem['id'] ?? null;
-        $this->score_maximum = $lineitem['scoreMaximum'] ?? null;
-        $this->label = $lineitem['label'] ?? null;
-        $this->resource_id = $lineitem['resourceId'] ?? null;
-        $this->resource_link_id = $lineitem['resourceLinkId'] ?? null;
-        $this->tag = $lineitem['tag'] ?? null;
-        $this->start_date_time = $lineitem['startDateTime'] ?? null;
-        $this->end_date_time = $lineitem['endDateTime'] ?? null;
+        $this->id = isset($lineitem['id']) ? $lineitem['id'] : null;
+        $this->score_maximum = isset($lineitem['scoreMaximum']) ? $lineitem['scoreMaximum'] : null;
+        $this->label = isset($lineitem['label']) ? $lineitem['label'] : null;
+        $this->resource_id = isset($lineitem['resourceId']) ? $lineitem['resourceId'] : null;
+        $this->resource_link_id = isset($lineitem['resourceLinkId']) ? $lineitem['resourceLinkId'] : null;
+        $this->tag = isset($lineitem['tag']) ? $lineitem['tag'] : null;
+        $this->start_date_time = isset($lineitem['startDateTime']) ? $lineitem['startDateTime'] : null;
+        $this->end_date_time = isset($lineitem['endDateTime']) ? $lineitem['endDateTime'] : null;
     }
 
     public function __toString()
