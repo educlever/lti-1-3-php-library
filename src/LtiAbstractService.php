@@ -45,7 +45,7 @@ abstract class LtiAbstractService
         );
     }
 
-    protected function getAll(IServiceRequest $request, string $key)/*: array*/
+    protected function getAll(IServiceRequest $request, /*string*/ $key)/*: array*/
     {
         return $this->serviceConnector->getAll(
             $this->registration,

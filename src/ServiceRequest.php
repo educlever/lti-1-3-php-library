@@ -12,7 +12,7 @@ class ServiceRequest implements IServiceRequest
     public $contentType = 'application/json';
     public $accept = 'application/json';
 
-    public function __construct(string $method, string $url)
+    public function __construct(/*string*/ $method, /*string*/ $url)
     {
         $this->method = $method;
         $this->url = $url;
@@ -42,35 +42,35 @@ class ServiceRequest implements IServiceRequest
         return $payload;
     }
 
-    public function setUrl(string $url)/*: IServiceRequest*/
+    public function setUrl(/*string*/ $url)/*: IServiceRequest*/
     {
         $this->url = $url;
 
         return $this;
     }
 
-    public function setAccessToken(string $accessToken)/*: IServiceRequest*/
+    public function setAccessToken(/*string*/ $accessToken)/*: IServiceRequest*/
     {
         $this->accessToken = 'Bearer '.$accessToken;
 
         return $this;
     }
 
-    public function setBody(string $body)/*: IServiceRequest*/
+    public function setBody(/*string*/ $body)/*: IServiceRequest*/
     {
         $this->body = $body;
 
         return $this;
     }
 
-    public function setAccept(string $accept)/*: IServiceRequest*/
+    public function setAccept(/*string*/ $accept)/*: IServiceRequest*/
     {
         $this->accept = $accept;
 
         return $this;
     }
 
-    public function setContentType(string $contentType)/*: IServiceRequest*/
+    public function setContentType(/*string*/ $contentType)/*: IServiceRequest*/
     {
         $this->contentType = $contentType;
 

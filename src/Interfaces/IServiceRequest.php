@@ -10,13 +10,13 @@ interface IServiceRequest
 
     public function getPayload()/*: array*/;
 
-    public function setUrl(string $url)/*: self*/;
+    public function setUrl(/*string*/ $url)/*: self*/;
 
-    public function setAccessToken(string $accessToken)/*: self*/;
+    public function setAccessToken(/*string*/ $accessToken)/*: self*/;
 
-    public function setBody(string $body)/*: self*/;
+    public function setBody(/*string*/ $body)/*: self*/;
 
-    public function setAccept(string $accept)/*: self*/;
+    public function setAccept(/*string*/ $accept)/*: self*/;
 
-    public function setContentType(string $contentType)/*: self*/;
+    public function setContentType(/*string*/ $contentType)/*: self*/;
 }
