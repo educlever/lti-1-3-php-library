@@ -6,7 +6,7 @@ use Packback\Lti1p3\LtiLineitem;
 
 class LtiLineitemTest extends TestCase
 {
-    public function setUp(): void
+    public function setUp()/*: void*/
     {
         $this->lineItem = new LtiLineitem();
     }

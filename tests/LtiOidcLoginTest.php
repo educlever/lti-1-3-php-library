@@ -11,7 +11,7 @@ use Packback\Lti1p3\OidcException;
 
 class LtiOidcLoginTest extends TestCase
 {
-    public function setUp(): void
+    public function setUp()/*: void*/
     {
         $this->cache = Mockery::mock(ICache::class);
         $this->cookie = Mockery::mock(ICookie::class);

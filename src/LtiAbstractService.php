@@ -22,21 +22,21 @@ abstract class LtiAbstractService
         $this->serviceData = $serviceData;
     }
 
-    public function getServiceData(): array
+    public function getServiceData()/*: array*/
     {
         return $this->serviceData;
     }
 
-    public function setServiceData(array $serviceData): self
+    public function setServiceData(array $serviceData)/*: self*/
     {
         $this->serviceData = $serviceData;
 
         return $this;
     }
 
-    abstract public function getScope(): array;
+    abstract public function getScope()/*: array*/;
 
-    protected function makeServiceRequest(IServiceRequest $request): array
+    protected function makeServiceRequest(IServiceRequest $request)/*: array*/
     {
         return $this->serviceConnector->makeServiceRequest(
             $this->registration,
@@ -45,7 +45,7 @@ abstract class LtiAbstractService
         );
     }
 
-    protected function getAll(IServiceRequest $request, string $key): array
+    protected function getAll(IServiceRequest $request, string $key)/*: array*/
     {
         return $this->serviceConnector->getAll(
             $this->registration,

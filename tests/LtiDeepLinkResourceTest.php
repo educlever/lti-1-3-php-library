@@ -8,7 +8,7 @@ use Packback\Lti1p3\LtiLineitem;
 
 class LtiDeepLinkResourceTest extends TestCase
 {
-    public function setUp(): void
+    public function setUp()/*: void*/
     {
         $this->deepLinkResource = new LtiDeepLinkResource();
     }

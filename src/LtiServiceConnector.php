@@ -79,7 +79,7 @@ class LtiServiceConnector implements ILtiServiceConnector
         array $scopes,
         IServiceRequest $request,
         bool $shouldRetry = true
-    ): array {
+    )/*: array */{
         $request->setAccessToken($this->getAccessToken($registration, $scopes));
 
         try {
@@ -120,7 +120,7 @@ class LtiServiceConnector implements ILtiServiceConnector
         array $scopes,
         IServiceRequest $request,
         string $key
-    ): array {
+    )/*: array */{
         if ($request->getMethod() !== static::METHOD_GET) {
             throw new \Exception('An invalid method was specified by an LTI service requesting all items.');
         }

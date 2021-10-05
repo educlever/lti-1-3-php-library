@@ -35,7 +35,7 @@ class LtiServiceConnectorTest extends TestCase
      */
     private $connector;
 
-    public function setUp(): void
+    public function setUp()/*: void*/
     {
         $this->registration = Mockery::mock(ILtiRegistration::class);
         $this->request = Mockery::mock(IServiceRequest::class);

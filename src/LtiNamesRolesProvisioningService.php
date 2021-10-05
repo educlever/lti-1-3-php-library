@@ -6,12 +6,12 @@ class LtiNamesRolesProvisioningService extends LtiAbstractService
 {
     public const CONTENTTYPE_MEMBERSHIPCONTAINER = 'application/vnd.ims.lti-nrps.v2.membershipcontainer+json';
 
-    public function getScope(): array
+    public function getScope()/*: array*/
     {
         return [LtiConstants::NRPS_SCOPE_MEMBERSHIP_READONLY];
     }
 
-    public function getMembers(): array
+    public function getMembers()/*: array*/
     {
         $request = new ServiceRequest(
             LtiServiceConnector::METHOD_GET,

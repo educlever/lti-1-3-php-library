@@ -6,7 +6,7 @@ use Packback\Lti1p3\LtiDeployment;
 
 class LtiDeploymentTest extends TestCase
 {
-    public function setUp(): void
+    public function setUp()/*: void*/
     {
         $this->deployment = new LtiDeployment();
     }

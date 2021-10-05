@@ -9,7 +9,7 @@ use Packback\Lti1p3\LtiNamesRolesProvisioningService;
 
 class LtiNamesRolesProvisioningServiceTest extends TestCase
 {
-    public function setUp(): void
+    public function setUp()/*: void*/
     {
         $this->connector = Mockery::mock(ILtiServiceConnector::class);
         $this->registration = Mockery::mock(ILtiRegistration::class);

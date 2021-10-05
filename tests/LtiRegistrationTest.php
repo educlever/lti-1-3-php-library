@@ -6,7 +6,7 @@ use Packback\Lti1p3\LtiRegistration;
 
 class LtiRegistrationTest extends TestCase
 {
-    public function setUp(): void
+    public function setUp()/*: void*/
     {
         $this->registration = new LtiRegistration();
     }

@@ -8,7 +8,7 @@ class LtiAssignmentsGradesService extends LtiAbstractService
     public const CONTENTTYPE_LINEITEM = 'application/vnd.ims.lis.v2.lineitem+json';
     public const CONTENTTYPE_RESULTCONTAINER = 'application/vnd.ims.lis.v2.resultcontainer+json';
 
-    public function getScope(): array
+    public function getScope()/*: array*/
     {
         return $this->getServiceData()['scope'];
     }
@@ -79,7 +79,7 @@ class LtiAssignmentsGradesService extends LtiAbstractService
         return $scores['body'];
     }
 
-    public function getLineItems(): array
+    public function getLineItems()/*: array*/
     {
         if (!in_array(LtiConstants::AGS_SCOPE_LINEITEM, $this->getScope())) {
             throw new LtiException('Missing required scope', 1);

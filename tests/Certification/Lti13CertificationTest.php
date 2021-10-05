@@ -114,7 +114,7 @@ class Lti13CertificationTest extends TestCase
     private $issuer;
     private $key;
 
-    public function setUp(): void
+    public function setUp()/*: void*/
     {
         $this->issuer = [
             'id' => 'issuer_id',

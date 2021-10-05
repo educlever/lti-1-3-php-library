@@ -18,17 +18,17 @@ class ServiceRequest implements IServiceRequest
         $this->url = $url;
     }
 
-    public function getMethod(): string
+    public function getMethod()/*: string*/
     {
         return strtoupper($this->method);
     }
 
-    public function getUrl(): string
+    public function getUrl()/*: string*/
     {
         return $this->url;
     }
 
-    public function getPayload(): array
+    public function getPayload()/*: array*/
     {
         $payload = [
             'headers' => $this->getHeaders(),
@@ -42,42 +42,42 @@ class ServiceRequest implements IServiceRequest
         return $payload;
     }
 
-    public function setUrl(string $url): IServiceRequest
+    public function setUrl(string $url)/*: IServiceRequest*/
     {
         $this->url = $url;
 
         return $this;
     }
 
-    public function setAccessToken(string $accessToken): IServiceRequest
+    public function setAccessToken(string $accessToken)/*: IServiceRequest*/
     {
         $this->accessToken = 'Bearer '.$accessToken;
 
         return $this;
     }
 
-    public function setBody(string $body): IServiceRequest
+    public function setBody(string $body)/*: IServiceRequest*/
     {
         $this->body = $body;
 
         return $this;
     }
 
-    public function setAccept(string $accept): IServiceRequest
+    public function setAccept(string $accept)/*: IServiceRequest*/
     {
         $this->accept = $accept;
 
         return $this;
     }
 
-    public function setContentType(string $contentType): IServiceRequest
+    public function setContentType(string $contentType)/*: IServiceRequest*/
     {
         $this->contentType = $contentType;
 
         return $this;
     }
 
-    private function getHeaders(): array
+    private function getHeaders()/*: array*/
     {
         $headers = [
             'Authorization' => $this->accessToken,
@@ -91,7 +91,7 @@ class ServiceRequest implements IServiceRequest
         return $headers;
     }
 
-    private function getBody(): ?string
+    private function getBody()/*: ?string*/
     {
         return $this->body;
     }

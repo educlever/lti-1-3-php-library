@@ -27,7 +27,7 @@ class LtiMessageLaunchTest extends TestCase
 
     public const STATE = 'state';
 
-    public function setUp(): void
+    public function setUp()/*: void*/
     {
         $this->cache = Mockery::mock(ICache::class);
         $this->cookie = Mockery::mock(ICookie::class);

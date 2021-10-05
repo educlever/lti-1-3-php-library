@@ -6,7 +6,7 @@ use Packback\Lti1p3\LtiGrade;
 
 class LtiGradeTest extends TestCase
 {
-    public function setUp(): void
+    public function setUp()/*: void*/
     {
         $this->grade = new LtiGrade();
     }
