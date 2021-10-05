@@ -4,7 +4,7 @@ namespace Packback\Lti1p3;
 
 class LtiNamesRolesProvisioningService extends LtiAbstractService
 {
-    public const CONTENTTYPE_MEMBERSHIPCONTAINER = 'application/vnd.ims.lti-nrps.v2.membershipcontainer+json';
+    const CONTENTTYPE_MEMBERSHIPCONTAINER = 'application/vnd.ims.lti-nrps.v2.membershipcontainer+json';
 
     public function getScope()/*: array*/
     {

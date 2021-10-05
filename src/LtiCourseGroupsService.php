@@ -4,7 +4,7 @@ namespace Packback\Lti1p3;
 
 class LtiCourseGroupsService extends LtiAbstractService
 {
-    public const CONTENTTYPE_CONTEXTGROUPCONTAINER = 'application/vnd.ims.lti-gs.v1.contextgroupcontainer+json';
+    const CONTENTTYPE_CONTEXTGROUPCONTAINER = 'application/vnd.ims.lti-gs.v1.contextgroupcontainer+json';
 
     public function getScope()/*: array*/
     {

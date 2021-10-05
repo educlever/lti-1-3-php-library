@@ -12,10 +12,10 @@ use Packback\Lti1p3\Interfaces\IServiceRequest;
 
 class LtiServiceConnector implements ILtiServiceConnector
 {
-    public const NEXT_PAGE_REGEX = '/<([^>]*)>; ?rel="next"/i';
+    const NEXT_PAGE_REGEX = '/<([^>]*)>; ?rel="next"/i';
 
-    public const METHOD_GET = 'GET';
-    public const METHOD_POST = 'POST';
+    const METHOD_GET = 'GET';
+    const METHOD_POST = 'POST';
 
     private $cache;
     private $client;

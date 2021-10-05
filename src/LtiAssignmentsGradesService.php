@@ -4,9 +4,9 @@ namespace Packback\Lti1p3;
 
 class LtiAssignmentsGradesService extends LtiAbstractService
 {
-    public const CONTENTTYPE_SCORE = 'application/vnd.ims.lis.v1.score+json';
-    public const CONTENTTYPE_LINEITEM = 'application/vnd.ims.lis.v2.lineitem+json';
-    public const CONTENTTYPE_RESULTCONTAINER = 'application/vnd.ims.lis.v2.resultcontainer+json';
+    const CONTENTTYPE_SCORE = 'application/vnd.ims.lis.v1.score+json';
+    const CONTENTTYPE_LINEITEM = 'application/vnd.ims.lis.v2.lineitem+json';
+    const CONTENTTYPE_RESULTCONTAINER = 'application/vnd.ims.lis.v2.resultcontainer+json';
 
     public function getScope()/*: array*/
     {

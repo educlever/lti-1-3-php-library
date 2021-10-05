@@ -16,9 +16,9 @@ use Packback\Lti1p3\MessageValidators\SubmissionReviewMessageValidator;
 
 class LtiMessageLaunch
 {
-    public const TYPE_DEEPLINK = 'LtiDeepLinkingRequest';
-    public const TYPE_SUBMISSIONREVIEW = 'LtiSubmissionReviewRequest';
-    public const TYPE_RESOURCELINK = 'LtiResourceLinkRequest';
+    const TYPE_DEEPLINK = 'LtiDeepLinkingRequest';
+    const TYPE_SUBMISSIONREVIEW = 'LtiSubmissionReviewRequest';
+    const TYPE_RESOURCELINK = 'LtiResourceLinkRequest';
     private $db;
     private $cache;
     private $cookie;

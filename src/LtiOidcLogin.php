@@ -8,12 +8,12 @@ use Packback\Lti1p3\Interfaces\IDatabase;
 
 class LtiOidcLogin
 {
-    public const COOKIE_PREFIX = 'lti1p3_';
+    const COOKIE_PREFIX = 'lti1p3_';
 
-    public const ERROR_MSG_LAUNCH_URL = 'No launch URL configured';
-    public const ERROR_MSG_ISSUER = 'Could not find issuer';
-    public const ERROR_MSG_LOGIN_HINT = 'Could not find login hint';
-    public const ERROR_MSG_REGISTRATION = 'Could not find registration details';
+    const ERROR_MSG_LAUNCH_URL = 'No launch URL configured';
+    const ERROR_MSG_ISSUER = 'Could not find issuer';
+    const ERROR_MSG_LOGIN_HINT = 'Could not find login hint';
+    const ERROR_MSG_REGISTRATION = 'Could not find registration details';
 
     private $db;
     private $cache;

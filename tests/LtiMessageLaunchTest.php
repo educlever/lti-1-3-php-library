@@ -20,12 +20,12 @@ use Packback\Lti1p3\LtiNamesRolesProvisioningService;
 
 class LtiMessageLaunchTest extends TestCase
 {
-    public const ISSUER_URL = 'https://ltiadvantagevalidator.imsglobal.org';
-    public const JWKS_FILE = '/tmp/jwks.json';
-    public const CERT_DATA_DIR = __DIR__.'/data/certification/';
-    public const PRIVATE_KEY = __DIR__.'/data/private.key';
+    const ISSUER_URL = 'https://ltiadvantagevalidator.imsglobal.org';
+    const JWKS_FILE = '/tmp/jwks.json';
+    const CERT_DATA_DIR = __DIR__.'/data/certification/';
+    const PRIVATE_KEY = __DIR__.'/data/private.key';
 
-    public const STATE = 'state';
+    const STATE = 'state';
 
     public function setUp()/*: void*/
     {
