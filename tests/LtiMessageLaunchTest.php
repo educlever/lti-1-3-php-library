@@ -155,7 +155,8 @@ class LtiMessageLaunchTest extends TestCase
         $this->registration->shouldReceive('getClientId')
             ->once()->andReturn($this->issuer['client_id']);
 
-        $actual = $this->messageLaunch::fromCache('id_token', $this->database, $this->cache);
+        $messageLaunch = $this->messageLaunch;
+        $actual = $messageLaunch::fromCache('id_token', $this->database, $this->cache);
 
         $this->assertInstanceOf(LtiMessageLaunch::class, $actual);
     }
@@ -383,7 +384,9 @@ class LtiMessageLaunchTest extends TestCase
         $this->registration->shouldReceive('getClientId')
             ->once()->andReturn($this->issuer['client_id']);
 
-        return $this->messageLaunch::fromCache($launchId, $this->database, $this->cache, $this->serviceConnector);
+        $messageLaunch = $this->messageLaunch;
+
+        return $messageLaunch::fromCache($launchId, $this->database, $this->cache, $this->serviceConnector);
     }
 
     private function buildJWT($data, $header)
