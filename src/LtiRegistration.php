@@ -27,7 +27,15 @@ class LtiRegistration implements ILtiRegistration
         $this->kid = isset($registration['kid']) ? $registration['kid'] : null;
     }
 
-    public static function new(array $registration = [])
+    public static function __callStatic($name, array $arguments)
+    {
+        if ($name === 'new') {
+            $name === '_new';
+        }
+        return call_user_func_array(static::$name, $arguments);
+    }
+
+    public static function _new(array $registration = [])
     {
         return new LtiRegistration($registration);
     }

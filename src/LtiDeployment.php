@@ -6,7 +6,15 @@ class LtiDeployment
 {
     private $deployment_id;
 
-    public static function new()
+    public static function __callStatic($name, array $arguments)
+    {
+        if ($name === 'new') {
+            $name === '_new';
+        }
+        return call_user_func_array(static::$name, $arguments);
+    }
+
+    public static function _new()
     {
         return new LtiDeployment();
     }

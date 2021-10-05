@@ -27,10 +27,18 @@ class LtiGradeSubmissionReview
         ]));
     }
 
+    public static function __callStatic($name, array $arguments)
+    {
+        if ($name === 'new') {
+            $name === '_new';
+        }
+        return call_user_func_array(static::$name, $arguments);
+    }
+
     /**
      * Static function to allow for method chaining without having to assign to a variable first.
      */
-    public static function new()
+    public static function _new()
     {
         return new LtiGradeSubmissionReview();
     }

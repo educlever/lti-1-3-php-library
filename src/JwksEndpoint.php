@@ -16,7 +16,15 @@ class JwksEndpoint
         $this->keys = $keys;
     }
 
-    public static function new(array $keys)
+    public static function __callStatic($name, array $arguments)
+    {
+        if ($name === 'new') {
+            $name === '_new';
+        }
+        return call_user_func_array(static::$name, $arguments);
+    }
+
+    public static function _new(array $keys)
     {
         return new JwksEndpoint($keys);
     }

@@ -33,10 +33,18 @@ class LtiOidcLogin
         $this->cookie = $cookie;
     }
 
+    public static function __callStatic($name, array $arguments)
+    {
+        if ($name === 'new') {
+            $name === '_new';
+        }
+        return call_user_func_array(static::$name, $arguments);
+    }
+
     /**
      * Static function to allow for method chaining without having to assign to a variable first.
      */
-    public static function new(IDatabase $database, ICache $cache = null, ICookie $cookie = null)
+    public static function _new(IDatabase $database, ICache $cache = null, ICookie $cookie = null)
     {
         return new LtiOidcLogin($database, $cache, $cookie);
     }
