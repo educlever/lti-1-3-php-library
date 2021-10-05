@@ -18,7 +18,7 @@ class JwksEndpointTest extends TestCase
 
     public function testCreatesANewInstance()
     {
-        $jwks = JwksEndpoint::new([]);
+        $jwks = JwksEndpoint::_new([]);
 
         $this->assertInstanceOf(JwksEndpoint::class, $jwks);
     }

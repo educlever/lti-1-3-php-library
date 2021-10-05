@@ -137,7 +137,7 @@ class LtiMessageLaunchTest extends TestCase
 
     public function testItCreatesANewInstance()
     {
-        $messageLaunch = LtiMessageLaunch::new(
+        $messageLaunch = LtiMessageLaunch::_new(
             $this->database,
             $this->cache,
             $this->cookie
@@ -388,7 +388,7 @@ class LtiMessageLaunchTest extends TestCase
 
     private function buildJWT($data, $header)
     {
-        $jwks = json_encode(JwksEndpoint::new([
+        $jwks = json_encode(JwksEndpoint::_new([
             $this->issuer['kid'] => $this->issuer['tool_private_key'],
         ])->getPublicJwks());
         file_put_contents(static::JWKS_FILE, $jwks);

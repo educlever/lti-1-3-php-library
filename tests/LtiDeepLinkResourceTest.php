@@ -20,7 +20,7 @@ class LtiDeepLinkResourceTest extends TestCase
 
     public function testItCreatesANewInstance()
     {
-        $deepLinkResource = LtiDeepLinkResource::new();
+        $deepLinkResource = LtiDeepLinkResource::_new();
 
         $this->assertInstanceOf(LtiDeepLinkResource::class, $deepLinkResource);
     }

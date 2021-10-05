@@ -31,7 +31,7 @@ class LtiOidcLoginTest extends TestCase
 
     public function testItCreatesANewInstance()
     {
-        $oidcLogin = LtiOidcLogin::new(
+        $oidcLogin = LtiOidcLogin::_new(
             $this->database,
             $this->cache,
             $this->cookie

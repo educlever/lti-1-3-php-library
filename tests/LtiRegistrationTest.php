@@ -18,7 +18,7 @@ class LtiRegistrationTest extends TestCase
 
     public function testItCreatesANewInstance()
     {
-        $registration = LtiRegistration::new();
+        $registration = LtiRegistration::_new();
 
         $this->assertInstanceOf(LtiRegistration::class, $registration);
     }

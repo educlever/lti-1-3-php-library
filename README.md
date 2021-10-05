@@ -48,7 +48,7 @@ JwksEndpoint::fromIssuer($database, 'http://example.com')->outputJwks();
 // From registration
 JwksEndpoint::fromRegistration($registration)->outputJwks();
 // From array
-JwksEndpoint::new(['a_unique_KID' => file_get_contents('/path/to/private/key.pem')])->outputJwks();
+JwksEndpoint::_new(['a_unique_KID' => file_get_contents('/path/to/private/key.pem')])->outputJwks();
 ```
 
 ## Documentation

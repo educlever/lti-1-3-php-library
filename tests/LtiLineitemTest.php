@@ -18,7 +18,7 @@ class LtiLineitemTest extends TestCase
 
     public function testItCreatesANewInstance()
     {
-        $grade = LtiLineitem::new();
+        $grade = LtiLineitem::_new();
 
         $this->assertInstanceOf(LtiLineitem::class, $grade);
     }

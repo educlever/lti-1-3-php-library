@@ -221,7 +221,7 @@ class Lti13CertificationTest extends TestCase
 
     public function buildJWT($data, $header)
     {
-        $jwks = json_encode(JwksEndpoint::new([
+        $jwks = json_encode(JwksEndpoint::_new([
             $this->issuer['kid'] => $this->issuer['tool_private_key'],
         ])->getPublicJwks());
         file_put_contents(static::JWKS_FILE, $jwks);
@@ -278,7 +278,7 @@ class Lti13CertificationTest extends TestCase
 
         $this->expectExceptionMessage('Invalid id_token, JWT must contain 3 parts');
 
-        LtiMessageLaunch::new($this->db, $this->cache, $this->cookie)
+        LtiMessageLaunch::_new($this->db, $this->cache, $this->cookie)
             ->validate($params);
     }
 
@@ -391,7 +391,7 @@ class Lti13CertificationTest extends TestCase
             ];
 
             try {
-                LtiMessageLaunch::new($this->db, $this->cache, $this->cookie)
+                LtiMessageLaunch::_new($this->db, $this->cache, $this->cookie)
                     ->validate($params);
             } catch (\Exception $e) {
                 $this->assertInstanceOf(LtiException::class, $e);
@@ -440,7 +440,7 @@ class Lti13CertificationTest extends TestCase
                 'state' => static::STATE,
             ];
 
-            $result = LtiMessageLaunch::new($this->db, $this->cache, $this->cookie)
+            $result = LtiMessageLaunch::_new($this->db, $this->cache, $this->cookie)
                 ->validate($params);
 
             // Assertions
@@ -474,7 +474,7 @@ class Lti13CertificationTest extends TestCase
             'state' => static::STATE,
         ];
 
-        return LtiMessageLaunch::new($this->db, $this->cache, $this->cookie)
+        return LtiMessageLaunch::_new($this->db, $this->cache, $this->cookie)
             ->validate($params);
     }
 }

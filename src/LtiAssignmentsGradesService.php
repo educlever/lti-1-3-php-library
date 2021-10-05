@@ -24,7 +24,7 @@ class LtiAssignmentsGradesService extends LtiAbstractService
         } elseif ($lineitem === null && !empty($this->getServiceData()['lineitem'])) {
             $scoreUrl = $this->getServiceData()['lineitem'];
         } else {
-            $lineitem = LtiLineitem::new()
+            $lineitem = LtiLineitem::_new()
                 ->setLabel('default')
                 ->setScoreMaximum(100);
             $lineitem = $this->findOrCreateLineitem($lineitem);

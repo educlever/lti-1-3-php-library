@@ -18,7 +18,7 @@ class LtiGradeTest extends TestCase
 
     public function testItCreatesANewInstance()
     {
-        $grade = LtiGrade::new();
+        $grade = LtiGrade::_new();
 
         $this->assertInstanceOf(LtiGrade::class, $grade);
     }
