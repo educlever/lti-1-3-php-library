@@ -31,10 +31,20 @@ class ImsCookie implements ICookie
             'secure' => true,
         ];
 
-        setcookie($name, $value, array_merge($cookie_options, $same_site_options, $options));
+        $path = "";
+        $domain = "";
+        $httponly = false;
+
+        extract(array_merge($cookie_options, $same_site_options, $options));
+
+        setcookie($name, $value, $expires, $path, $domain, $secure, $httponly);
 
         // Set a second fallback cookie in the event that "SameSite" is not supported
-        setcookie('LEGACY_'.$name, $value, array_merge($cookie_options, $options));
+        extract(array_merge($cookie_options, $options));
+        $samesite = null;
+        $secure = false;
+        
+        setcookie($name, $value, $expires, $path, $domain, $secure, $httponly);
 
         return $this;
     }
